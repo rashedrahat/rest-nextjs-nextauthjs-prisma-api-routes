@@ -1,0 +1,71 @@
+{
+	"variables": [],
+	"info": {
+		"name": "rest-nextjs-nextauthjs-prisma-api-routes",
+		"_postman_id": "1246cfa2-cc57-411a-3b34-e2ba4601b179",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign up",
+			"request": {
+				"url": "http://localhost:3000/api/auth/signup",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"abc@abc.com\",\n  \"name\": \"Mr Abc\",\n  \"password\": \"123456\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"url": "http://localhost:3000/api/users/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"rahatrashed@test.com\",\n  \"name\": \"Rashed Rahat\",\n  \"password\": \"12345678\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update user balance",
+			"request": {
+				"url": "http://localhost:3000/api/money/update",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userId\": 20,\n  \"userBalance\": 100\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

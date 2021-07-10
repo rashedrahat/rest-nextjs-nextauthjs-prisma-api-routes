@@ -1,34 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# rest-nextjs-nextauthjs-prisma-api-routes
+Simple `Next.js` app with some REST APIs using `NextAuth.js` & `Prisma`.
+<ul>
+    <li>Sign up a new user</li>
+    <li>Create a new user by a resgistered user</li>
+    <li>Update user balance</li>
+</ul>
 
 ## Getting Started
 
-First, run the development server:
+First, install the packages:
+
+```bash
+npm install
+# or
+npm i
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Then as optional, run in another terminal:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+npx prisma studio
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Open [http://localhost:5555](http://localhost:5555) with your browser to see the Prisma Studio.
 
-## Learn More
+You can start testing the APIs by importing `rest-nextjs-nextauthjs-prisma-api-routes.postman_collection.json` file into an API Tester tool such as `Postman`, `Talend API Tester` (recommended), etc.
 
-To learn more about Next.js, take a look at the following resources:
+## Issues with Postman but not with Talend API Tester
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You may find an issue (`401 Unauthorized`) although user is authenticated with the following API endpoints:
+  <ul>
+    <li><code>http://localhost:3000/api/users/create</code></li>
+    <li><code>http://localhost:3000/api/money/update</code></li>
+  </ul>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you face this issue then in your case switch to [Talend API Tester](https://chrome.google.com/webstore/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm?hl=en) instead of using `Postman`. There are no issues in [Talend API Tester](https://chrome.google.com/webstore/detail/talend-api-tester-free-ed/aejoelaoggembcahagimdiliamlcdmfm?hl=en) (it behaves correctly the way it should be).
